@@ -78,32 +78,25 @@ try:
     else:
         st.info("No accounts receivable data available.")
 
-    # Monthly financial trends
+    # Monthly financial trends    
     st.divider()
     st.subheader("Monthly Financial Trends")
 
     trend_query = """
         SELECT
-            transaction_year,
             transaction_month,
             currency,
-            SUM(total_revenue) AS revenue,
-            SUM(total_expenses) AS expenses,
-            SUM(gross_profit) AS profit
+            total_revenue AS revenue,
+            total_expenses AS expenses,
+            gross_profit AS profit
         FROM finance_management.gold.profit_loss_summary
-        GROUP BY
-            transaction_year,
-            transaction_month,
-            currency
-        ORDER BY
-            transaction_year,
-            transaction_month,
-            currency
+        ORDER BY transaction_month, currency
     """
 
     trend_df = run_query(trend_query)
 
     if not trend_df.empty:
+
         selected_currency = st.selectbox(
             "Select Currency",
             sorted(trend_df["currency"].dropna().unique())
@@ -111,19 +104,18 @@ try:
 
         currency_df = trend_df[
             trend_df["currency"] == selected_currency
-        ]
+        ].copy()
 
-        currency_df["period"] = (
-            currency_df["transaction_year"].astype(str)
-            + "-"
-            + currency_df["transaction_month"].astype(str).str.zfill(2)
-        )
+        currency_df["period"] = currency_df["transaction_month"]
 
         st.line_chart(
             currency_df.set_index("period")[
                 ["revenue", "expenses", "profit"]
             ]
         )
+    else:
+        st.info("No monthly financial data available.")
+
 
 except Exception as e:
     st.error("Unable to load Finance Dashboard.")
