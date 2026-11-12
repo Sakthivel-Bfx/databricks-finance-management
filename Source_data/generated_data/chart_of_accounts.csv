@@ -1,0 +1,71 @@
+account_id,account_name,account_type,account_category,is_active
+GL1001,Cash 1,Asset,Cash,True
+GL1002,Cash 2,Asset,Cash,True
+GL1003,Cash 3,Asset,Cash,True
+GL1004,Cash 4,Asset,Cash,True
+GL1005,Cash 5,Asset,Cash,True
+GL1006,Accounts Receivable 1,Asset,Accounts Receivable,True
+GL1007,Accounts Receivable 2,Asset,Accounts Receivable,True
+GL1008,Accounts Receivable 3,Asset,Accounts Receivable,True
+GL1009,Accounts Receivable 4,Asset,Accounts Receivable,True
+GL1010,Accounts Receivable 5,Asset,Accounts Receivable,True
+GL1011,Inventory 1,Asset,Inventory,True
+GL1012,Inventory 2,Asset,Inventory,True
+GL1013,Inventory 3,Asset,Inventory,True
+GL1014,Inventory 4,Asset,Inventory,True
+GL1015,Inventory 5,Asset,Inventory,True
+GL1016,Accounts Payable 1,Liability,Accounts Payable,True
+GL1017,Accounts Payable 2,Liability,Accounts Payable,True
+GL1018,Accounts Payable 3,Liability,Accounts Payable,True
+GL1019,Accounts Payable 4,Liability,Accounts Payable,True
+GL1020,Accounts Payable 5,Liability,Accounts Payable,True
+GL1021,Loans 1,Liability,Loans,True
+GL1022,Loans 2,Liability,Loans,True
+GL1023,Loans 3,Liability,Loans,True
+GL1024,Loans 4,Liability,Loans,True
+GL1025,Loans 5,Liability,Loans,True
+GL1026,Tax Payable 1,Liability,Tax Payable,True
+GL1027,Tax Payable 2,Liability,Tax Payable,True
+GL1028,Tax Payable 3,Liability,Tax Payable,True
+GL1029,Tax Payable 4,Liability,Tax Payable,True
+GL1030,Tax Payable 5,Liability,Tax Payable,True
+GL1031,Share Capital 1,Equity,Share Capital,True
+GL1032,Share Capital 2,Equity,Share Capital,True
+GL1033,Share Capital 3,Equity,Share Capital,True
+GL1034,Share Capital 4,Equity,Share Capital,True
+GL1035,Share Capital 5,Equity,Share Capital,True
+GL1036,Retained Earnings 1,Equity,Retained Earnings,True
+GL1037,Retained Earnings 2,Equity,Retained Earnings,True
+GL1038,Retained Earnings 3,Equity,Retained Earnings,True
+GL1039,Retained Earnings 4,Equity,Retained Earnings,True
+GL1040,Retained Earnings 5,Equity,Retained Earnings,True
+GL1041,Product Sales 1,Revenue,Product Sales,True
+GL1042,Product Sales 2,Revenue,Product Sales,True
+GL1043,Product Sales 3,Revenue,Product Sales,True
+GL1044,Product Sales 4,Revenue,Product Sales,True
+GL1045,Product Sales 5,Revenue,Product Sales,True
+GL1046,Service Revenue 1,Revenue,Service Revenue,True
+GL1047,Service Revenue 2,Revenue,Service Revenue,True
+GL1048,Service Revenue 3,Revenue,Service Revenue,True
+GL1049,Service Revenue 4,Revenue,Service Revenue,True
+GL1050,Service Revenue 5,Revenue,Service Revenue,True
+GL1051,Salaries 1,Expense,Salaries,True
+GL1052,Salaries 2,Expense,Salaries,True
+GL1053,Salaries 3,Expense,Salaries,True
+GL1054,Salaries 4,Expense,Salaries,True
+GL1055,Salaries 5,Expense,Salaries,True
+GL1056,Rent 1,Expense,Rent,True
+GL1057,Rent 2,Expense,Rent,True
+GL1058,Rent 3,Expense,Rent,True
+GL1059,Rent 4,Expense,Rent,True
+GL1060,Rent 5,Expense,Rent,True
+GL1061,Marketing 1,Expense,Marketing,True
+GL1062,Marketing 2,Expense,Marketing,True
+GL1063,Marketing 3,Expense,Marketing,True
+GL1064,Marketing 4,Expense,Marketing,True
+GL1065,Marketing 5,Expense,Marketing,True
+GL1066,Utilities 1,Expense,Utilities,True
+GL1067,Utilities 2,Expense,Utilities,True
+GL1068,Utilities 3,Expense,Utilities,True
+GL1069,Utilities 4,Expense,Utilities,True
+GL1070,Utilities 5,Expense,Utilities,True
