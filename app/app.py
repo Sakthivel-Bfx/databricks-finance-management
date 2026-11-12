@@ -55,12 +55,13 @@ try:
     st.divider()
     st.subheader("Accounts Receivable")
 
+    
     ar_query = """
         SELECT
             currency,
-            SUM(total_invoice_amount) AS invoice_amount,
-            SUM(total_paid_amount) AS paid_amount,
-            SUM(total_outstanding_amount) AS outstanding_amount
+            SUM(invoice_amount) AS invoice_amount,
+            SUM(paid_amount) AS paid_amount,
+            SUM(outstanding_amount) AS outstanding_amount
         FROM finance_management.gold.accounts_receivable_summary
         GROUP BY currency
         ORDER BY currency
