@@ -78,19 +78,22 @@ try:
     else:
         st.info("No accounts receivable data available.")
 
-    # Monthly financial trends    
+    # Monthly financial trends        
     st.divider()
     st.subheader("Monthly Financial Trends")
 
     trend_query = """
         SELECT
+            transaction_year,
             transaction_month,
             currency,
             total_revenue AS revenue,
             total_expenses AS expenses,
             gross_profit AS profit
         FROM finance_management.gold.profit_loss_summary
-        ORDER BY transaction_month, currency
+        ORDER BY
+            transaction_year,
+            transaction_month
     """
 
     trend_df = run_query(trend_query)
@@ -106,13 +109,18 @@ try:
             trend_df["currency"] == selected_currency
         ].copy()
 
-        currency_df["period"] = currency_df["transaction_month"]
+        currency_df["period"] = (
+            currency_df["transaction_year"].astype(str)
+            + "-"
+            + currency_df["transaction_month"].astype(str).str.zfill(2)
+        )
 
         st.line_chart(
             currency_df.set_index("period")[
                 ["revenue", "expenses", "profit"]
             ]
         )
+
     else:
         st.info("No monthly financial data available.")
 
