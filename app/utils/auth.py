@@ -1,6 +1,7 @@
+
 from databricks.sdk import WorkspaceClient
 
-from utils.database import execute_query
+from utils.database import run_query
 
 
 def get_current_user_email():
@@ -18,15 +19,18 @@ def get_current_user_email():
 
 def get_user_persona(user_email):
 
+    # Escape single quotes to safely construct the SQL string
+    safe_email = user_email.replace("'", "''")
+
     query = f"""
         SELECT persona
-        FROM finance_management.bronze.app_user_personas
-        WHERE LOWER(user_email) = LOWER('{user_email}')
+        FROM finance_management.gold.app_user_personas
+        WHERE LOWER(user_email) = LOWER('{safe_email}')
           AND is_active = TRUE
         LIMIT 1
     """
 
-    result = execute_query(query)
+    result = run_query(query)
 
     if result.empty:
         return None
