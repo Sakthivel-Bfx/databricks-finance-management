@@ -24,7 +24,7 @@ def get_user_persona(user_email):
 
     query = f"""
         SELECT persona
-        FROM finance_management.gold.app_user_personas
+        FROM finance_management.bronze.app_user_personas
         WHERE LOWER(user_email) = LOWER('{safe_email}')
           AND is_active = TRUE
         LIMIT 1
