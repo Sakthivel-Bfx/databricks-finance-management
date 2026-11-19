@@ -9,12 +9,17 @@ def get_current_user_email():
         w = WorkspaceClient()
         user = w.current_user.me()
 
+        st.write("### Databricks Identity Debug")
+        st.write("User name:", user.user_name)
+        st.write("Display name:", user.display_name)
+        st.write("User ID:", user.id)
+        st.write("Email details:", user.emails)
+
         return user.user_name.lower().strip()
 
     except Exception as e:
-        raise RuntimeError(
-            f"Unable to identify current Databricks user: {e}"
-        )
+        st.error(f"Identity error: {e}")
+        raise
 
 
 def get_user_persona(user_email):
