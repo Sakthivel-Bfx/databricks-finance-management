@@ -1,5 +1,41 @@
 import streamlit as st
 from utils.database import run_query
+from utils.auth import authenticate_user
+from config.personas import get_menu, has_permission
+
+
+# Authenticate current user
+user_info = authenticate_user()
+
+if not user_info["authorized"]:
+    st.error(
+        f"Access denied: {user_info['email']} "
+        "is not assigned an active persona."
+    )
+    st.stop()
+
+# Store user information
+st.session_state["user_email"] = user_info["email"]
+st.session_state["persona"] = user_info["persona"]
+
+# Display user information
+st.sidebar.title("Finance Management")
+
+st.sidebar.caption(
+    f"User: {user_info['email']}"
+)
+
+st.sidebar.caption(
+    f"Persona: {user_info['persona']}"
+)
+
+# Persona-based navigation
+menu_items = get_menu(user_info["persona"])
+
+selected_menu = st.sidebar.radio(
+    "Navigation",
+    menu_items
+)
 
 st.set_page_config(
     page_title="Finance Management",
